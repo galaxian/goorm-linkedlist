@@ -1,6 +1,8 @@
 import java.util.Iterator;
 
 import structure.MyLinkedList;
+import structure.MyQueue;
+import structure.MyStack;
 
 public class Main {
 	public static void main(String[] args) {
@@ -29,5 +31,15 @@ public class Main {
 		for (Integer val : linkedList) {
 			System.out.println(val);
 		}
+
+		System.out.println("----stack----");
+		MyStack<Integer> stack = new MyStack<>();
+		stack.add(1);
+		stack.add(2);
+		stack.add(4);
+
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
 	}
 }

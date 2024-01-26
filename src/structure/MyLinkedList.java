@@ -5,9 +5,11 @@ import java.util.Iterator;
 public class MyLinkedList<E> implements Iterable<E> {
 
 	private Node<E> head;
+	private int size;
 
 	public MyLinkedList() {
 		this.head = null;
+		this.size = 0;
 	}
 
 	public void add(E data) {
@@ -20,6 +22,7 @@ public class MyLinkedList<E> implements Iterable<E> {
 			}
 			curNode.setNext(new Node<>(data));
 		}
+		size++;
 	}
 
 	public E get(int i) {
@@ -50,6 +53,7 @@ public class MyLinkedList<E> implements Iterable<E> {
 		}
 		Node<E> prevNode = this.getNode(i - 1);
 		prevNode.setNext(prevNode.getNext().getNext());
+		size--;
 	}
 
 	public void print() {
@@ -58,6 +62,10 @@ public class MyLinkedList<E> implements Iterable<E> {
 			System.out.println(curNode.getData());
 			curNode = curNode.getNext();
 		}
+	}
+
+	public int getSize() {
+		return size;
 	}
 
 	@Override
@@ -73,7 +81,6 @@ public class MyLinkedList<E> implements Iterable<E> {
 		}
 
 		@Override
-
 		public boolean hasNext() {
 			return idx != null;
 		}
