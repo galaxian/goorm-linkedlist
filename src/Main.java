@@ -41,5 +41,15 @@ public class Main {
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
+
+		System.out.println("----queue----");
+		MyQueue<Integer> queue = new MyQueue<>();
+		queue.add(1);
+		queue.add(100);
+		queue.add(-2);
+
+		System.out.println(queue.popLeft());
+		System.out.println(queue.popLeft());
+		System.out.println(queue.popLeft());
 	}
 }
