@@ -20,6 +20,16 @@ public class MyLinkedList<E> {
 		}
 	}
 
+	public E get(int i) {
+		Node<E> node = this.head;
+		int idx = 0;
+		while (idx < i) {
+			node = node.getNext();
+			idx++;
+		}
+		return node.getData();
+	}
+
 	public void print() {
 		Node<E> curNode = this.head;
 		while (curNode != null) {

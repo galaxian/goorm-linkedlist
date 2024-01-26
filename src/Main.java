@@ -8,5 +8,8 @@ public class Main {
 		linkedList.add(11);
 
 		linkedList.print();
+
+		Integer getNodeData = linkedList.get(2);
+		System.out.println(getNodeData);
 	}
 }
