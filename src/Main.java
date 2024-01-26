@@ -6,10 +6,15 @@ public class Main {
 		linkedList.add(1);
 		linkedList.add(2);
 		linkedList.add(11);
+		linkedList.add(2);
+		linkedList.add(9);
 
 		linkedList.print();
 
 		Integer getNodeData = linkedList.get(2);
 		System.out.println(getNodeData);
+
+		linkedList.delete(4);
+		linkedList.print();
 	}
 }
