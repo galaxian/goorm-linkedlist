@@ -19,4 +19,12 @@ public class MyLinkedList<E> {
 			curNode.setNext(new Node<>(data));
 		}
 	}
+
+	public void print() {
+		Node<E> curNode = this.head;
+		while (curNode != null) {
+			System.out.println(curNode.getData());
+			curNode = curNode.getNext();
+		}
+	}
 }
