@@ -1,6 +1,8 @@
 package structure;
 
-public class MyLinkedList<E> {
+import java.util.Iterator;
+
+public class MyLinkedList<E> implements Iterable<E> {
 
 	private Node<E> head;
 
@@ -55,6 +57,35 @@ public class MyLinkedList<E> {
 		while (curNode != null) {
 			System.out.println(curNode.getData());
 			curNode = curNode.getNext();
+		}
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+		return new MyIterable();
+	}
+
+	private class MyIterable implements Iterator<E> {
+		private Node<E> idx;
+
+		public MyIterable() {
+			idx = head;
+		}
+
+		@Override
+
+		public boolean hasNext() {
+			return idx != null;
+		}
+
+		@Override
+		public E next() {
+			if (!hasNext()) {
+				throw new IndexOutOfBoundsException();
+			}
+			E target = idx.getData();
+			idx = idx.getNext();
+			return target;
 		}
 	}
 }

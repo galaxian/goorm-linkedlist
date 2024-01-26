@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 import structure.MyLinkedList;
 
 public class Main {
@@ -16,5 +18,16 @@ public class Main {
 
 		linkedList.delete(4);
 		linkedList.print();
+
+		Iterator<Integer> iterator = linkedList.iterator();
+		System.out.println("----iter----");
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+
+		System.out.println("----foreach----");
+		for (Integer val : linkedList) {
+			System.out.println(val);
+		}
 	}
 }
